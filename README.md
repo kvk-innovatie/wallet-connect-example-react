@@ -1,4 +1,4 @@
-# Integration example of the Wallet Connect Button in a React app
+# Integration example of the Wallet Connect Button in a React app (Only frontend)
 
 For further explanation and documentation, visit: https://wallet-connect.eu
 
