@@ -1,6 +1,6 @@
 # Example of the Wallet Connect Button in a React app 
 
-This repo shows an example of the integration of the Wallet Connect Button in a React app, only using the frontend. It is based on the standard React + Vite setup. For further explanation and documentation, visit: https://wallet-connect.eu
+This repo shows an example of the integration of the Wallet Connect Button in a React app. It is based on the standard React + Vite setup. For further explanation and documentation, visit: https://wallet-connect.eu
 
 # React + Vite
 

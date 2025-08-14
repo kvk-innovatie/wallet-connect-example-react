@@ -3,42 +3,32 @@ import requests
 
 app = Flask(__name__)
 
-@app.route('/api/disclosed-attributes', methods=['GET'])
+@app.route('/api/disclosed-attributes', defaults={'path': ''}, methods=['GET'])
 @app.route('/api/disclosed-attributes/<path:path>', methods=['GET'])
-def proxy_disclosed_attributes(path=''):
+def disclosed_attributes(path):
     api_key = '27ff4d0ceb03b0cd02a4b4d6fe4fe6436791223be38823bc97b8319a5991c769'
     
     try:
         # Construct the target URL
-        if path:
-            target_url = f"https://wallet-connect.eu/api/disclosed-attributes/{path}"
-        else:
-            target_url = "https://wallet-connect.eu/api/disclosed-attributes"
+        target_path = f'/api/disclosed-attributes/{path}' if path else '/api/disclosed-attributes'
+        target_url = f'https://wallet-connect.eu{target_path}'
         
-        # Prepare headers
-        headers = {
-            'Authorization': f'Bearer {api_key}',
-            'Content-Type': 'application/json'
-        }
-        
-        # Make the request to the target server
-        response = requests.request(
-            method=request.method,
-            url=target_url,
-            headers=headers,
+        response = requests.get(
+            target_url,
+            headers={
+                'Authorization': f'Bearer {api_key}',
+                'Content-Type': 'application/json'
+            },
             params=request.args,
-            json=request.get_json() if request.is_json else None,
-            verify=False  # Disable SSL verification due to Python venv SSL config issue
+            verify=False  # Disable SSL verification due to Python venv SSL config issue. Do not use in production
         )
         
-        # Return the response
         return jsonify(response.json()), response.status_code
         
-    except requests.exceptions.RequestException as e:
-        return jsonify({'error': 'Proxy error', 'message': str(e)}), 500
     except Exception as e:
+        print(f"Request error: {e}")
         return jsonify({'error': 'Proxy error', 'message': str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(host='localhost', port=4000, debug=True)
-    print('Python backend running on port 4000')
+    app.run(port=4000)
+    print('Backend running on port 4000')
