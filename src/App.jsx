@@ -15,7 +15,7 @@ function App() {
 
   return (
     <>
-      <WalletConnectButton
+      {/* <WalletConnectButton
         onSuccess={(attrs) => {
           setAttributes(attrs);
         }}
@@ -24,9 +24,9 @@ function App() {
         walletConnectHost="http://localhost:3021" // normally defaults to https://wallet-connect.eu
       >
         Deel gegevens met je wallet (local)
-      </WalletConnectButton>
+      </WalletConnectButton> */}
 
-      <WalletConnectButton
+      {/* <WalletConnectButton
         onSuccess={(attrs) => {
           setAttributes(attrs);
         }}
@@ -35,7 +35,7 @@ function App() {
         lang="en"
       >
         Deel gegevens met je wallet (frontend only)
-      </WalletConnectButton>
+      </WalletConnectButton> */}
 
       <WalletConnectButton
         onSuccess={(attrs) => {

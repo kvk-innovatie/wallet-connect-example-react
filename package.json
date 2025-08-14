@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "server": "node server.js"
+    "server:node": "cd backend-nodejs && npm install && npm start",
+    "server:python": "cd backend-python && python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt && python3 server.py"
   },
   "dependencies": {
     "axios": "^1.6.0",
