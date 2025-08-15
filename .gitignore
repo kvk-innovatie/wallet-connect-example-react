@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# Backend dependencies and environments
+backend-nodejs/node_modules/
+backend-python/venv/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

@@ -2,6 +2,16 @@
 
 This repo shows an example of the integration of the Wallet Connect Button in a React app. It is based on the standard React + Vite setup. For further explanation and documentation, visit: https://wallet-connect.eu
 
+In src/App.jsx there are two example buttons. The Quick & easy (frontend only) variant and the secure (via backend) variant. If you want to run the secure variant, you need to run a backend. To run the NodeJS backend example, use: 
+```
+npm run server:node
+```
+
+To run the Python backend example, use:
+```
+npm run server:python
+```
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

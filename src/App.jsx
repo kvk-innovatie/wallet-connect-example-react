@@ -26,7 +26,7 @@ function App() {
         Deel gegevens met je wallet (local)
       </WalletConnectButton> */}
 
-      {/* <WalletConnectButton
+      <WalletConnectButton
         onSuccess={(attrs) => {
           setAttributes(attrs);
         }}
@@ -34,8 +34,8 @@ function App() {
         apiKey="27ff4d0ceb03b0cd02a4b4d6fe4fe6436791223be38823bc97b8319a5991c769"
         lang="en"
       >
-        Deel gegevens met je wallet (frontend only)
-      </WalletConnectButton> */}
+        Deel gegevens met je wallet (quick and easy, frontend only)
+      </WalletConnectButton>
 
       <WalletConnectButton
         onSuccess={(attrs) => {
@@ -44,7 +44,7 @@ function App() {
         clientId="nlw_fe98ca6b35b25dbad0717ebb184dbe68"
         lang="en"
       >
-        Deel gegevens met je wallet (via backend)
+        Deel gegevens met je wallet (secure, via backend)
       </WalletConnectButton>
     </>
   );
