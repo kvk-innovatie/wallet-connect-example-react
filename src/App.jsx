@@ -1,5 +1,6 @@
 import WalletConnectButton from "wallet-connect-button-react";
 import { useState } from "react";
+import "./App.css";
 
 function App() {
   const [attributes, setAttributes] = useState(null);
@@ -29,8 +30,8 @@ function App() {
       </div> */}
       <div>
         <WalletConnectButton
-          clientId="nlw_76039d745d088b940ad21703374a0cb6"
-          apiKey="4edafd47a67584c563d6fc3f4d105d2900062c57352ec3db2dc1c962b57dce2e"
+          clientId="nlw_c960db8c1ccf3b56734bbb3af4f3853d"
+          apiKey="de857820619ec931817863d4cf84b0f471feb9ad6f336d0882e2b9a3a6f52169"
           label="Deel gegevens met je wallet (quick and easy, frontend only)"
           lang="en"
           onSuccess={(attrs) => {
