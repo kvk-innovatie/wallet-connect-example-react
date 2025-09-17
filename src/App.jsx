@@ -20,7 +20,7 @@ function App() {
         <WalletConnectButton
           clientId="nlw_358b64b727fff6d0b03b7b29edb7da00"
           apiKey="78396e965f9698aed80603ab517424bcc8f62b20b2e7e6d0a2ee69f6b962cd25"
-          label="Deel gegevens met je wallet (local)"
+          label="Deel gegevens vanuit je wallet (local)"
           lang="nl"
           walletConnectHost="http://localhost:3021" // normally defaults to https://wallet-connect.eu
           onSuccess={(attrs) => {
@@ -32,7 +32,7 @@ function App() {
         <WalletConnectButton
           clientId="nlw_c960db8c1ccf3b56734bbb3af4f3853d"
           apiKey="de857820619ec931817863d4cf84b0f471feb9ad6f336d0882e2b9a3a6f52169"
-          label="Deel gegevens met je wallet (quick and easy, frontend only)"
+          label="Deel gegevens vanuit je wallet (quick and easy, frontend only)"
           lang="en"
           onSuccess={(attrs) => {
             setAttributes(attrs);
@@ -42,7 +42,7 @@ function App() {
       <div>
         <WalletConnectButton
           clientId="nlw_76039d745d088b940ad21703374a0cb6"
-          label="Deel gegevens met je wallet (secure, via backend)"
+          label="Deel gegevens vanuit je wallet (secure, via backend)"
           lang="nl"
           onSuccess={(attrs) => {
             setAttributes(attrs);
