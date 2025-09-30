@@ -18,8 +18,8 @@ function App() {
     <>
       {/* <div>
         <WalletConnectButton
-          clientId="nlw_358b64b727fff6d0b03b7b29edb7da00"
-          apiKey="78396e965f9698aed80603ab517424bcc8f62b20b2e7e6d0a2ee69f6b962cd25"
+          clientId="nlw_e80b9c17e0a51ca3e7f0a0a82d573d49"
+          apiKey="bf9d1971086d1826dcee6dad58bf5682078245e7c52f353ba34d14cae34bba25"
           label="Deel gegevens vanuit je wallet (local)"
           lang="nl"
           walletConnectHost="http://localhost:3021" // normally defaults to https://wallet-connect.eu
@@ -30,8 +30,8 @@ function App() {
       </div> */}
       <div>
         <WalletConnectButton
-          clientId="nlw_c960db8c1ccf3b56734bbb3af4f3853d"
-          apiKey="de857820619ec931817863d4cf84b0f471feb9ad6f336d0882e2b9a3a6f52169"
+          clientId="nlw_4aae3f2b071308f33fa55cb4dd0a4cce"
+          apiKey="59c54f167b8e9c2f900aa3d3d897239d4355d1ad4a733a38cc00ab0e7abaf77b"
           label="Deel gegevens vanuit je wallet (quick and easy, frontend only)"
           lang="en"
           onSuccess={(attrs) => {
