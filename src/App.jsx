@@ -5,59 +5,135 @@ import "./App.css";
 function App() {
   const [attributes, setAttributes] = useState(null);
 
-  if (attributes) {
-    return (
-      <div>
-        <h3>Received attributes:</h3>
-        <pre>{JSON.stringify(attributes, null, 2)}</pre>
-      </div>
-    );
-  }
-
   return (
     <>
-      {/* <div>
-        <WalletConnectButton
-          clientId="nlw_e80b9c17e0a51ca3e7f0a0a82d573d49"
-          apiKey="bf9d1971086d1826dcee6dad58bf5682078245e7c52f353ba34d14cae34bba25"
-          label="Deel gegevens vanuit je wallet (local)"
-          lang="nl"
-          walletConnectHost="http://localhost:3021" // normally defaults to https://wallet-connect.eu
-          onSuccess={(attrs) => {
-            setAttributes(attrs);
-          }}
-        />
-      </div> */}
-      <div>
-        <WalletConnectButton
-          clientId="nlw_4aae3f2b071308f33fa55cb4dd0a4cce"
-          apiKey="59c54f167b8e9c2f900aa3d3d897239d4355d1ad4a733a38cc00ab0e7abaf77b"
-          label="Deel gegevens vanuit je wallet (quick and easy, frontend only)"
-          lang="en"
-          onSuccess={(attrs) => {
-            setAttributes(attrs);
-          }}
-        />
+      <div id="buttons" style={{ display: attributes ? 'none' : 'block' }}>
+        <div>
+          <h1>Share data with your wallet</h1>
+          <div>
+            <h2>Using local Wallet-Connect server</h2>
+            <div>
+              <h3>With your personal wallet</h3>
+              <WalletConnectButton
+                clientId="nlw_dfde31a773342b647585eea534d84a2b"
+                apiKey="f6396a67e65abdda18518ccd4d5e41c97c04ea1e2dfcf2693296c80afd699ddd"
+                useLocalWcServer
+                label="Share data with your wallet"
+                lang="en"
+                onSuccess={(attrs) => {
+                  setAttributes(attrs);
+                }}
+              />
+            </div>
+            <div>
+              <h3>With your business wallet</h3>
+              <WalletConnectButton
+                clientId="nlw_413d7017cd07f4701837b781e6a423fd"
+                apiKey="7d91f8ec5ccde8949f35f68b1c15d3e152b9773ee93331a5b44afe4e43ad8bce"
+                useLocalWcServer
+                business
+                label="Share data with your business wallet"
+                lang="en"
+                onSuccess={(attrs) => {
+                  setAttributes(attrs);
+                }}
+              />
+            </div>
+          </div>
+          <div>
+            <h2>Using remote Wallet-Connect server</h2>
+            <div>
+              <h3>With your personal wallet</h3>
+              <WalletConnectButton
+                clientId="nlw_bc45e349dfe586ac0290e0ad951436a7"
+                apiKey="03a2d5c2665d877ee8ccd8aef8df440e3a8cbc99c2e9892bfcedca978956e2e5"
+                label="Share data with your wallet (quick and easy, only frontend)"
+                lang="en"
+                onSuccess={(attrs) => {
+                  setAttributes(attrs);
+                }}
+              />
+              <WalletConnectButton
+                clientId="nlw_76039d745d088b940ad21703374a0cb6"
+                label="Share data with your wallet (secure, via backend)"
+                lang="en"
+                onSuccess={(attrs) => {
+                  setAttributes(attrs);
+                }}
+              />
+            </div>
+            <div>
+              <h3>With your business wallet</h3>
+              <WalletConnectButton
+                business
+                clientId="nlw_ca3c09051b028af4948a65d2dfb99bbf"
+                apiKey="e74d8a420fe2aef2231f3d6ada62310963377376270a004a4060eebad749ca5a"
+                label="Share data from your business wallet (remote, quick and easy)"
+                lang="en"
+                onSuccess={(attrs) => {
+                  setAttributes(attrs);
+                }}
+              />
+            </div>
+          </div>
+        </div>
+        <div>
+          <h1>Add data to your wallet</h1>
+          <div>
+            <h2>Using local Wallet-Connect server</h2>
+            <div>
+              <h3>With your personal wallet</h3>
+              <WalletConnectButton
+                label="Add data to your wallet"
+                clientId="nlw_c1ac12ac51ca83659ede67cd71716a13"
+                useLocalWcServer
+                issuance
+                helpBaseUrl="https://example.com/"
+                lang="en"
+              />
+            </div>
+            <div>
+              <h3>With your business wallet</h3>
+              <WalletConnectButton
+                label="Add data to your business wallet"
+                clientId="nlw_b134f567b984989ea66a65931b7cdd9c"
+                useLocalWcServer
+                business
+                issuance
+                helpBaseUrl="https://example.com/"
+                lang="en"
+              />
+            </div>
+          </div>
+          <div>
+            <h2>Using remote Wallet-Connect server</h2>
+            <div>
+              <h3>With your personal wallet</h3>
+              <WalletConnectButton
+                label="Add data to your wallet"
+                clientId="nlw_2fe35d507c90c42aaa355cba14c3c8ed"
+                issuance
+                helpBaseUrl="https://example.com/"
+                lang="en"
+              />
+            </div>
+            <div>
+              <h3>With your business wallet</h3>
+              <WalletConnectButton
+                label="Add data to your business wallet"
+                clientId="nlw_a9517a99999176845e13f61fcaba262b"
+                business
+                issuance
+                helpBaseUrl="https://example.com/"
+                lang="en"
+              />
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-        <WalletConnectButton
-          clientId="nlw_76039d745d088b940ad21703374a0cb6"
-          label="Deel gegevens vanuit je wallet (secure, via backend)"
-          lang="nl"
-          onSuccess={(attrs) => {
-            setAttributes(attrs);
-          }}
-        />
-      </div>
-      <div>
-        <WalletConnectButton
-          issuance
-          label="Voeg data toe aan je wallet"
-          clientId="nlw_66d939a49ec11a32856280dfeafe3f9d"
-          helpBaseUrl="https://example.com/"
-          lang="nl"
-        ></WalletConnectButton>
-      </div>
+      <pre id="attributes-content">
+        {attributes ? JSON.stringify(attributes, null, 2) : ""}
+      </pre>
     </>
   );
 }
