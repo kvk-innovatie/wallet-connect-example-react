@@ -66,8 +66,8 @@ function App() {
               <h3>With your business wallet</h3>
               <WalletConnectButton
                 business
-                clientId="nlw_ca3c09051b028af4948a65d2dfb99bbf"
-                apiKey="e74d8a420fe2aef2231f3d6ada62310963377376270a004a4060eebad749ca5a"
+                clientId="nlw_bd2f376caef0d76a21c177181a9d1d89"
+                apiKey="1a3e81b556e7716d8c7643fba10b09e57e8d6dedb340ec0e164ee31ce90eb4d4"
                 label="Share data from your business wallet (remote, quick and easy)"
                 lang="en"
                 onSuccess={(attrs) => {
