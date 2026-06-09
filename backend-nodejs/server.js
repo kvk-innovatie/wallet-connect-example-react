@@ -5,20 +5,22 @@ const app = express();
 
 app.use(express.json());
 
-// Proxy endpoint for disclosed attributes
-app.get('/api/disclosed-attributes*', async (req, res) => {
-  const apiKey = '4edafd47a67584c563d6fc3f4d105d2900062c57352ec3db2dc1c962b57dce2e';
-  
+const API_KEY = 'c26369a948c6e287905fc5d292e65083a496a43b387bda48dbc14924099d1315';
+// const UPSTREAM = 'https://wallet-connect.eu';
+const UPSTREAM = 'http://localhost:5021';
+
+async function proxyToWalletConnect(req, res) {
   try {
     const response = await axios({
       method: req.method,
-      url: `https://wallet-connect.eu${req.url}`,
+      url: `${UPSTREAM}${req.url}`,
       headers: {
-        'Authorization': `Bearer ${apiKey}`,
+        'Authorization': `Bearer ${API_KEY}`,
         'Content-Type': 'application/json'
       },
+      data: req.body,
     });
-    
+
     res.status(response.status).json(response.data);
   } catch (error) {
     if (error.response) {
@@ -27,8 +29,10 @@ app.get('/api/disclosed-attributes*', async (req, res) => {
       res.status(500).json({ error: 'Proxy error', message: error.message });
     }
   }
-});
+}
 
-app.listen(4000, () => {
-  console.log('Node.js backend running on port 4000');
+app.all('/api/*', proxyToWalletConnect);
+
+app.listen(5030, () => {
+  console.log('Node.js backend running on port http://localhost:5030');
 });

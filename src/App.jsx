@@ -15,8 +15,8 @@ function App() {
             <div>
               <h3>With your personal wallet</h3>
               <WalletConnectButton
-                clientId="nlw_dfde31a773342b647585eea534d84a2b"
-                apiKey="f6396a67e65abdda18518ccd4d5e41c97c04ea1e2dfcf2693296c80afd699ddd"
+                clientId="nlw_c212597e1ef485b5401e280d6d356772"
+                apiKey="c26369a948c6e287905fc5d292e65083a496a43b387bda48dbc14924099d1315"
                 useLocalWcServer
                 label="Share data with your wallet"
                 lang="en"
@@ -28,8 +28,8 @@ function App() {
             <div>
               <h3>With your business wallet</h3>
               <WalletConnectButton
-                clientId="nlw_413d7017cd07f4701837b781e6a423fd"
-                apiKey="7d91f8ec5ccde8949f35f68b1c15d3e152b9773ee93331a5b44afe4e43ad8bce"
+                clientId="nlw_c50ec3760f9b4026ad6ca224f3d2f47f"
+                apiKey="67be3968f4785ab4f49aaaee1587dc8ddb566b8d597c646817d68f17761c455b"
                 useLocalWcServer
                 business
                 label="Share data with your business wallet"
@@ -54,7 +54,7 @@ function App() {
                 }}
               />
               <WalletConnectButton
-                clientId="nlw_76039d745d088b940ad21703374a0cb6"
+                clientId="nlw_c212597e1ef485b5401e280d6d356772"
                 label="Share data with your wallet (secure, via backend)"
                 lang="en"
                 onSuccess={(attrs) => {
@@ -85,7 +85,7 @@ function App() {
               <h3>With your personal wallet</h3>
               <WalletConnectButton
                 label="Add data to your wallet"
-                clientId="nlw_c1ac12ac51ca83659ede67cd71716a13"
+                clientId="nlw_d0c7a4679e6756863a92a7288b3cb682"
                 useLocalWcServer
                 issuance
                 helpBaseUrl="https://example.com/"
@@ -96,7 +96,7 @@ function App() {
               <h3>With your business wallet</h3>
               <WalletConnectButton
                 label="Add data to your business wallet"
-                clientId="nlw_b134f567b984989ea66a65931b7cdd9c"
+                clientId="nlw_277d30d4e091b3a2a95fae1dbfb18ce8"
                 useLocalWcServer
                 business
                 issuance

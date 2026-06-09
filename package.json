@@ -9,12 +9,12 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "server:node": "cd backend-nodejs && npm install && npm start",
-    "server:python": "cd backend-python && python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt && python3 server.py"
+    "server:python": "cd backend-python && python3 -m venv venv && . venv/bin/activate && pip install -r requirements.txt && python3 server.py"
   },
   "dependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "wallet-connect-button-react": "^1.1.12"
+    "wallet-connect-button-react": "file:../wallet-connect-button-react"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",
